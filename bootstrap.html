@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="scroll-smooth scroll-py-10" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="...">
+    <!-- Replace '...' with the correct integrity and crossorigin attributes for your specific Bootstrap version -->
+
+    <script defer src="./scripts/home.js"></script>
+    <style>
+        /* Custom styles (not Bootstrap) */
+        ::-webkit-scrollbar {
+            width: 16px;
+            background-color: rgb(24, 24, 27);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 99999px;
+            background-color: rgba(161, 161, 170, 0.1);
+            border: 4px solid rgb(24, 24, 27);
+        }
+
+        aside a[data-state="active"] div {
+            width: 2.5rem;
+            background-color: rgb(241, 245, 249);
+            animation: loader 1s infinite;
+        }
+
+        @keyframes loader {
+            0%,
+            2% {
+                stroke-dashoffset: 900;
+                fill-opacity: 0;
+            }
+            30%, 70% {
+                stroke-dashoffset: 0;
+                fill-opacity: 0;
+            }
+            50% {
+                fill-opacity: 1;
+            }
+            98%,
+            100% {
+                stroke-dashoffset: 900;
+                fill-opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-700 selection:text-slate-300 min-vh-100 bg-zinc-900 text-slate-100">
+    <div class="container-fluid d-flex gap-4 min-vh-100">
+        <aside class="p-4 h-100 sticky-top flex-[6_6_0%] flex flex-column">
+            <!-- Content of the aside remains unchanged -->
+        </aside>
+        <main class="p-4 h-100 flex-[8_8_0%]">
+            <!-- Content of the main remains unchanged -->
+        </main>
+    </div>
+
+    <!-- Bootstrap JS dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+    <!-- Replace '...' with the correct integrity and crossorigin attributes for your specific Bootstrap version -->
+
+    <!-- Your other scripts and content -->
+</body>
+</html>
