@@ -19,7 +19,7 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > worksSection.clientHeight && worksSection.clientHeight + repositoriesSection.clientHeight >= window.scrollY) {
     repositoriesButton.setAttribute("data-state", "active")
   }
-  if (window.scrollY > worksSection.clientHeight + repositoriesSection.clientHeight && worksSection.clientHeight + repositoriesSection.clientHeight + communityAndFilesButton.clientHeight >= window.scrollY) {
+  if (window.scrollY > worksSection.clientHeight + repositoriesSection.clientHeight) {
     communityAndFilesButton.setAttribute("data-state", "active")
   }
 })

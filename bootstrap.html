@@ -1,69 +1,493 @@
 <!DOCTYPE html>
 <html class="scroll-smooth scroll-py-10" lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="...">
-    <!-- Replace '...' with the correct integrity and crossorigin attributes for your specific Bootstrap version -->
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <script defer src="./scripts/home.js"></script>
     <style>
-        /* Custom styles (not Bootstrap) */
-        ::-webkit-scrollbar {
-            width: 16px;
-            background-color: rgb(24, 24, 27);
-        }
+      .text-slate-100 {
+        color: rgb(241 245 249);
+      }
+      .text-zinc-600 {
+        color: rgb(82 82 91);
+      }
+      .text-zinc-400 {
+        color: rgb(161 161 170);
+      }
+      .bg-zinc-800 {
+        background: rgb(39 39 42);
+      }
+      .bg-zinc-900 {
+        background: rgb(24 24 27);
+      }
+      ::-webkit-scrollbar {
+        width: 16px;
+        background-color: rgb(24, 24, 27);
+      }
 
-        ::-webkit-scrollbar-thumb {
-            border-radius: 99999px;
-            background-color: rgba(161, 161, 170, 0.1);
-            border: 4px solid rgb(24, 24, 27);
-        }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 99999px;
+        background-color: rgba(161, 161, 170, 0.1);
+        border: 4px solid rgb(24, 24, 27);
+      }
 
-        aside a[data-state="active"] div {
-            width: 2.5rem;
-            background-color: rgb(241, 245, 249);
-            animation: loader 1s infinite;
-        }
+      aside a[data-state="active"] div {
+        width: 2.5rem;
+        background-color: rgb(241, 245, 249);
+        animation: loader 1s infinite;
+      }
 
-        @keyframes loader {
-            0%,
-            2% {
-                stroke-dashoffset: 900;
-                fill-opacity: 0;
-            }
-            30%, 70% {
-                stroke-dashoffset: 0;
-                fill-opacity: 0;
-            }
-            50% {
-                fill-opacity: 1;
-            }
-            98%,
-            100% {
-                stroke-dashoffset: 900;
-                fill-opacity: 0;
-            }
+      @keyframes loader {
+        0%,
+        2% {
+          stroke-dashoffset: 900;
+          fill-opacity: 0;
         }
+        30%,
+        70% {
+          stroke-dashoffset: 0;
+          fill-opacity: 0;
+        }
+        50% {
+          fill-opacity: 1;
+        }
+        98%,
+        100% {
+          stroke-dashoffset: 900;
+          fill-opacity: 0;
+        }
+      }
     </style>
-</head>
-<body class="selection:bg-indigo-700 selection:text-slate-300 min-vh-100 bg-zinc-900 text-slate-100">
-    <div class="container-fluid d-flex gap-4 min-vh-100">
-        <aside class="p-4 h-100 sticky-top flex-[6_6_0%] flex flex-column">
-            <!-- Content of the aside remains unchanged -->
-        </aside>
-        <main class="p-4 h-100 flex-[8_8_0%]">
-            <!-- Content of the main remains unchanged -->
-        </main>
+  </head>
+  <body
+    class="vh-100 bg-zinc-900 text-slate-100"
+  >
+    <div class="d-flex row-gap-20 min-vh-100 container-lg mx-auto">
+      <aside class="p-4 vh-100 position-sticky sticky-top w-50 d-flex flex-column">
+        <h2 style="text-wrap: balance" class="fs-1 font-semibold mb-4">
+          Olá, Sou o <span class="text-decoration-underline">Ari</span>
+        </h2>
+        <p class="text-zinc-400 mb-5">
+          Sou desenvolvedor! Trabalho, atualmente, na área Front-end da empresa
+          <a href="#" target="_blank" class="text-slate-100 text-decoration-underline"
+            >Wanna Inc.</a
+          >
+          Adoro desenvolver telas, tendo habilidades com React.js e um nerd do
+          CSS. Caso queira acompanhar meus projetos, cola lá no meu
+          <a href="#" target="_blank" class="text-slate-100 text-decoration-underline">Github</a
+          >.
+        </p>
+        <ul style="list-style: none;" class="list-group mb-5">
+          <li>
+            <a
+              data-state="active"
+              class="text-decoration-none text-zinc-600 text-uppercase fw-medium d-flex align-items-center mb-3 works"
+              href="#works"
+              ><span class="text-[12px]">01</span>
+              <div
+                class="h-px transition-all duration-100 w-4 mx-4 bg-zinc-600 rounded-full"
+              ></div>
+              Trabalhos</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-decoration-none text-zinc-600 transition data-[state=active]:text-slate-100 text-uppercase fw-medium d-flex align-items-center mb-3 repositories"
+              href="#repositories"
+              ><span class="text-[12px]">02</span>
+              <div
+                class="h-px transition-all duration-100 w-4 mx-4 bg-zinc-600 rounded-full"
+              ></div>
+              Repositórios</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-decoration-none text-zinc-600 transition data-[state=active]:text-slate-100 text-uppercase fw-medium d-flex align-items-center community-and-files"
+              href="#community-and-files"
+              ><span class="text-[12px]">03</span>
+              <div
+                class="h-px transition-all duration-100 w-4 mx-4 bg-zinc-600 rounded-full"
+              ></div>
+              Comunidade e Arquivos</a
+            >
+          </li>
+        </ul>
+        <footer class="mt-auto d-flex align-items-center">
+          <button class="d-flex align-items-center justify-content-center mr-5">
+            <img
+              class="w-3 h-3 mr-3"
+              src="./assets/icons/instagram.svg"
+              alt="Instagram icon"
+            />
+            Instagram
+            <img
+              class="w-3 h-3 ml-1.5"
+              src="./assets/icons/link.svg"
+              alt="Redirect icon"
+            />
+          </button>
+          <button class="flex text-sm align-items-center justify-content-center">
+            <img
+              class="w-3 h-3 mr-3"
+              src="./assets/icons/github.svg"
+              alt="Github icon"
+            />
+            Github
+            <img
+              class="w-3 h-3 ml-1.5"
+              src="./assets/icons/link.svg"
+              alt="Redirect icon"
+            />
+          </button>
+        </footer>
+      </aside>
+      <main class="p-16 h-full w-50">
+        <section id="works" class="w-full mb-32">
+          <h2
+            class="font-semibold tracking-widest text-zinc-700 text-xs text-uppercase mb-2"
+          >
+            Trabalhos
+          </h2>
+          <div
+            class="flex align-items-center flex-col gap-2 [&:hover>a]:opacity-50 [&:hover>div]:opacity-50"
+          >
+            <a
+              href="https://wanna.com/"
+              target="_blank"
+              class="hover:!opacity-100 block w-full bg-zinc-800 rounded-sm py-10 px-8 transition hover:scale-105"
+            >
+              <span
+                class="block text-xs fw-medium mb-2 text-uppercase tracking-widest"
+                >PHP</span
+              >
+              <h2 class="text-3xl mb-2">Wanna Inc.</h2>
+              <p class="text-zinc-400 text-sm mb-4">
+                Site principal da empresa, voltado a criação de comunidades
+                através das apostas.
+              </p>
+              <div class="flex align-items-center text-xs text-zinc-400">
+                <img
+                  class="h-3 w-3 mr-1"
+                  src="./assets/icons/user.svg"
+                  alt="User icon"
+                />
+                20.000 usuário/dia
+              </div>
+            </a>
+            <div
+              class="cursor-pointer hover:!opacity-100 block w-full bg-zinc-800 rounded-sm py-10 px-8 transition hover:scale-105"
+            >
+              <span
+                class="block text-xs fw-medium mb-2 text-uppercase tracking-widest"
+                >React.js</span
+              >
+              <h2 class="text-3xl mb-2">Belveder</h2>
+              <p class="text-zinc-400 text-sm mb-4">
+                Site principal de uma empresa de engenharia.
+              </p>
+              <div class="flex align-items-center text-xs text-zinc-400">
+                <img
+                  class="h-3 w-3 mr-1"
+                  src="./assets/icons/user.svg"
+                  alt="User icon"
+                />
+                undefined
+              </div>
+            </div>
+            <div
+              class="cursor-pointer hover:!opacity-100 block w-full bg-zinc-800 rounded-sm py-10 px-8 transition hover:scale-105"
+            >
+              <span
+                class="block text-xs fw-medium mb-2 text-uppercase tracking-widest"
+                >Next.js</span
+              >
+              <h2 class="text-3xl mb-2">Bolão PIX</h2>
+              <p class="text-zinc-400 text-sm mb-4">
+                Site de apostas, focado em esportes.
+              </p>
+              <div class="flex align-items-center text-xs text-zinc-400">
+                <img
+                  class="h-3 w-3 mr-1"
+                  src="./assets/icons/user.svg"
+                  alt="User icon"
+                />
+                undefined
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="repositories" class="w-full mb-32">
+          <h2
+            class="font-semibold tracking-widest text-zinc-700 text-xs text-uppercase mb-2"
+          >
+            Repositórios
+          </h2>
+          <div class="h-full columns-2 gap-2 [&:hover>div]:opacity-50">
+            <div
+              class="break-inside-avoid-column hover:!opacity-100 inline-block mb-2 w-full bg-zinc-800 rounded-sm py-10 px-8 transition"
+            >
+              <span
+                class="block text-xs fw-medium mb-2 text-uppercase tracking-widest"
+                >Next.js</span
+              >
+              <p class="block text-zinc-400 text-xs fw-medium mb-24">
+                21 de abril, 2022
+              </p>
+              <h2 class="text-3xl mb-3">Rocketseat UI Clone</h2>
+              <div class="flex align-items-center">
+                <a
+                  href="https://github.com/aristofany-herderson/rocketseat-ui-clone"
+                  target="_blank"
+                  class="flex text-xs text-zinc-400 mr-4 align-items-center justify-content-center"
+                >
+                  Código
+                  <img
+                    class="w-3 h-3 ml-2"
+                    src="./assets/icons/link.svg"
+                    alt="Github icon"
+                    class="icon"
+                  />
+                </a>
+                <a
+                  href="https://github.com/aristofany-herderson/rocketseat-ui-clone/blob/main/README.md"
+                  target="_blank"
+                  class="flex text-xs text-zinc-400 align-items-center justify-content-center"
+                >
+                  Documentação
+                  <img
+                    class="w-3 h-3 ml-2"
+                    src="./assets/icons/link.svg"
+                    alt="Github icon"
+                    class="icon"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              class="break-inside-avoid-colum hover:!opacity-100 mb-2 w-full bg-zinc-800 rounded-sm py-10 px-8 transition"
+            >
+              <span
+                class="block text-xs fw-medium mb-2 text-uppercase tracking-widest"
+                >Next.js</span
+              >
+              <p class="block text-zinc-400 text-xs fw-medium mb-24">
+                31 de março, 2022
+              </p>
+              <h2 class="text-3xl mb-3">Podcastr</h2>
+              <div class="flex align-items-center">
+                <a
+                  href="https://github.com/aristofany-herderson/podcastr"
+                  target="_blank"
+                  class="flex text-xs text-zinc-400 mr-4 align-items-center justify-content-center"
+                >
+                  Código
+                  <img
+                    class="w-3 h-3 ml-2"
+                    src="./assets/icons/link.svg"
+                    alt="Github icon"
+                    class="icon"
+                  />
+                </a>
+                <a
+                  href="https://github.com/aristofany-herderson/podcastr/blob/main/README.md"
+                  target="_blank"
+                  class="flex text-xs text-zinc-400 align-items-center justify-content-center"
+                >
+                  Documentação
+                  <img
+                    class="w-3 h-3 ml-2"
+                    src="./assets/icons/link.svg"
+                    alt="Github icon"
+                    class="icon"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              class="break-inside-avoid-column hover:!opacity-100 inline-block mt-16 mb-2 w-full bg-zinc-800 rounded-sm py-10 px-8 transition"
+            >
+              <span
+                class="block text-xs fw-medium mb-2 text-uppercase tracking-widest"
+                >Next.js</span
+              >
+              <p class="block text-zinc-400 text-xs fw-medium mb-24">
+                31 de março, 2022
+              </p>
+              <h2 class="text-3xl mb-3">Dashboard Positive</h2>
+              <div class="flex align-items-center">
+                <a
+                  href="https://github.com/aristofany-herderson/dashboard-positive"
+                  target="_blank"
+                  class="flex text-xs text-zinc-400 mr-4 align-items-center justify-content-center"
+                >
+                  Código
+                  <img
+                    class="w-3 h-3 ml-2"
+                    src="./assets/icons/link.svg"
+                    alt="Github icon"
+                    class="icon"
+                  />
+                </a>
+                <a
+                  href="https://github.com/aristofany-herderson/dashboard-positive/blob/main/README.md"
+                  target="_blank"
+                  class="flex text-xs text-zinc-400 align-items-center justify-content-center"
+                >
+                  Documentação
+                  <img
+                    class="w-3 h-3 ml-2"
+                    src="./assets/icons/link.svg"
+                    alt="Github icon"
+                    class="icon"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              class="break-inside-avoid-column hover:!opacity-100 inline-block mb-2 w-full bg-zinc-800 rounded-sm py-10 px-8 transition"
+            >
+              <span
+                class="block text-xs fw-medium mb-2 text-uppercase tracking-widest"
+                >Markup Language</span
+              >
+              <p class="block text-zinc-400 text-xs fw-medium mb-24">
+                19 de junho, 2023
+              </p>
+              <h2 class="text-3xl mb-3">Readme.md</h2>
+              <div class="flex align-items-center">
+                <a
+                  href="https://github.com/aristofany-herderson/aristofany-herderson"
+                  target="_blank"
+                  class="flex text-xs text-zinc-400 align-items-center justify-content-center"
+                >
+                  Leia
+                  <img
+                    class="w-3 h-3 ml-2"
+                    src="./assets/icons/link.svg"
+                    alt="Github icon"
+                    class="icon"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="community-and-files">
+          <h2
+            class="font-semibold tracking-widest text-zinc-700 text-xs text-uppercase mb-2"
+          >
+            Comunidade e arquivos
+          </h2>
+          <div class="h-full">
+            <a
+              href="https://gist.github.com/aristofany-herderson/ca714c3abdbd52fcb5e5ec179f1b65ac"
+              class="h-full mb-10 d-flex align-items-center"
+              target="_blank"
+            >
+              <div class="bg-zinc-800 rounded-full p-8 mr-8">
+                <img
+                  class="w-10 h-10"
+                  src="./assets/icons/file.svg"
+                  alt="File icon"
+                />
+              </div>
+              <div>
+                <h2 class="text-3xl mb-3">Configs do VScode</h2>
+                <p class="block text-zinc-400 text-xs fw-medium mb-2">
+                  Deixe seu editor estilizado
+                </p>
+                <span
+                  class="block text-xs fw-medium text-uppercase tracking-widest"
+                  >04 de Julho, 2023</span
+                >
+              </div>
+            </a>
+            <a
+              href="https://github.com/aristofany-herderson"
+              class="h-full d-flex align-items-center"
+              target="_blank"
+            >
+              <div class="bg-zinc-800 rounded-full p-8 mr-8">
+                <img
+                  class="w-10 h-10"
+                  src="./assets/icons/github.svg"
+                  alt="File icon"
+                />
+              </div>
+              <div>
+                <h2 class="text-3xl mb-3">Minhas atividades</h2>
+                <p class="block text-zinc-400 text-xs fw-medium mb-2">
+                  Fique por dentro dos meus trabalhos
+                </p>
+                <span
+                  class="block text-xs fw-medium text-uppercase tracking-widest"
+                  >-</span
+                >
+              </div>
+            </a>
+          </div>
+        </section>
+      </main>
     </div>
-
-    <!-- Bootstrap JS dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
-    <!-- Replace '...' with the correct integrity and crossorigin attributes for your specific Bootstrap version -->
-
-    <!-- Your other scripts and content -->
-</body>
+    <div
+      class="fixed bg-zinc-800 border-zinc-900 border-solid border-2 rounded top-4 left-1/2 -translate-x-1/2 d-flex align-items-center"
+    >
+      <a href="#" target="_blank" class="block py-3 px-4">
+        <img
+          class="w-3 h-3"
+          src="./assets/icons/tailwind.svg"
+          alt="Tailwind icon"
+        />
+      </a>
+      <a href="#" target="_blank" class="block py-3 px-4">
+        <img
+          class="w-3 h-3"
+          src="./assets/icons/tailwind.svg"
+          alt="Tailwind icon"
+        />
+      </a>
+      <a href="#" target="_blank" class="block py-3 px-4">
+        <img
+          class="w-3 h-3"
+          src="./assets/icons/tailwind.svg"
+          alt="Tailwind icon"
+        />
+      </a>
+    </div>
+    <div
+      class="data-[state=closed]:opacity-0 data-[state=closed]:z-[-1] transition-all fixed top-0 left-0 z-10 w-screen h-screen bg-zinc-900 d-flex flex-col align-items-center justify-content-center"
+      data-state="opened"
+      id="loader"
+    >
+      <svg
+        viewBox="0 0 196 313"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-10 mb-3 animate-[loader_6s_infinite] fill-slate-300 stroke-[3px] stroke-slate-300"
+        style="fill-opacity: 0; stroke-dasharray: 900"
+      >
+        <path
+          d="M188.971 175.237L196 145.949V102.018L169.446 56.6225L167.493 36.3165L161.831 41.9788L139.573 9.86013L137.425 20.7941L110.383 4.00262L108.528 14.9366L87.7339 0L82.9502 18.6464L49.953 14.9366L54.1509 23.0395L39.8 24.6015V35.8284L30.5256 41.8811L35.6997 46.7624L23.3014 51.1555L28.2803 56.7201L0.75 102.116V148.292L8.36475 173.87L12.465 165.474V141.361L22.2275 127.986V94.7939L40.6786 70.29H98.8631L156.852 69.8019L175.499 94.9891V127.694L185.261 142.825V165.084L188.971 175.237Z M175.01 147.999L171.203 141.166L159.293 134.43L125.124 137.651L120.243 146.828L128.639 147.999L165.638 143.704L175.01 147.999Z M22.8134 147.999L26.6208 141.166L38.531 134.43L72.6022 137.651L77.4834 146.828L69.0877 147.999L32.1854 143.704L22.8134 147.999Z M140.256 245.039L111.262 235.179L102.28 240.646V221.609L114.776 224.44L146.895 232.445L153.631 250.603L140.256 245.039ZM57.5679 245.039L86.4649 235.179L95.4464 240.646V221.609L82.9504 224.44L50.8317 232.445L44.0956 250.603L57.5679 245.039Z M161.831 229.614L149.921 259.975L132.739 277.255H64.9873L48.7816 260.952L35.8951 229.614L10.7078 202.572L12.1722 229.614L23.3991 265.735L53.4676 296.097V296.389L69.5757 312.009L99.5466 312.4L129.42 312.009L174.23 265.735L185.554 229.614L187.116 202.572L161.831 229.614Z"
+        />
+      </svg>
+    </div>
+    <footer class="py-4 px-2 w-full bg-zinc-800">
+      <div
+        class="flex flex-wrap align-items-center justify-between mx-auto w-full max-w-7xl"
+      >
+        <p>IFRN-Santa Cruz</p>
+        <p>Trabalho de Autoria Web</p>
+        <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
+        <p>Aristofany Herderson Gomes de Souto Menezes</p>
+      </div>
+    </footer>
+  </body>
 </html>
